@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>환율 계산</h1>
+<h3>송금국가: 미국(USD)</h3>
+<h3 style="display:inline">수취국가:</h3>
+<select id="nationSelector">
+    <option value="USDKRW">한국(KRW)</option>
+    <option value="USDJPY">일본(JPY)</option>
+    <option value="USDPHP">필리핀(PHP)</option>
+</select>
+<br>
+<h3 style="display:inline">환율: </h3>
+<h3 id="exchangeRate"/>
+<h3 style="display:inline">송금액:</h3>
+<input type="number">USD
+<button style="display: block">Submit</button>
+<script>
+    let exchangeRateText = document.getElementById("exchangeRate");
+    const exchangeRateApi = "http://apilayer.net/api/live?access_key=75312ddd29f6cecc664270ec05722295";
+    //TODO await 비동기 data parsing까지 대기
+    document.getElementById('nationSelector').addEventListener('change', function (event) {
+        let jsonObject;
+        fetch(exchangeRateApi)
+            .then((response) => response.json())
+            .then((data) => Object.keys(data.quotes).filter((item) => item === event.target.value ? console.log(data.quotes[item]) : ''));
+    });
+</script>
+</body>
+</html>
