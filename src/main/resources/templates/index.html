@@ -2,23 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Finance Helper</title>
+    <title th:text="#{title}"></title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
 </head>
 <body>
-<div id="loader">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#" th:text="#{title}"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,37 +17,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#" th:text="#{exchange.rate.calculator}"><span class="sr-only">(current)</span></a>
+                <a class="nav-link" th:text="#{exchange.rate.calculator}"><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#" th:text="#{average.unit.price.calculator}"><span class="sr-only">(current)</span></a>
-            </li>
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link" href="#">Link</a>-->
-<!--            </li>-->
-<!--            <li class="nav-item dropdown">-->
-<!--                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                    Dropdown-->
-<!--                </a>-->
-<!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                    <a class="dropdown-item" href="#">Action</a>-->
-<!--                    <a class="dropdown-item" href="#">Another action</a>-->
-<!--                    <div class="dropdown-divider"></div>-->
-<!--                    <a class="dropdown-item" href="#">Something else here</a>-->
-<!--                </div>-->
-<!--            </li>-->
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+                <a class="nav-link" th:text="#{average.unit.price.calculator}"><span class="sr-only">(current)</span></a>
             </li>
         </ul>
-        <select class="selectpicker" data-width="fit">
-            <option data-content='<span class="flag-icon flag-icon-us"></span> English'>Korean</option>
-            <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
+        <select id="languageSelector" class="selectpicker" data-width="fit">
+            <option data-content='<span class="flag-icon flag-icon-us"></span> Korean' th:value="kr" th:text="#{korean}"></option>
+            <option data-content='<span class="flag-icon flag-icon-mx"></span> English' th:value="en" th:text="#{english}"></option>
+            <option data-content='<span class="flag-icon flag-icon-mx"></span> Japanese' th:value="ja" th:text="#{japanese}"></option>
         </select>
     </div>
 </nav>
-<h1>환율 계산</h1>
-<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/js/index.js}"></script>
 <script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
 <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
 </body>
