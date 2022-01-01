@@ -1,4 +1,4 @@
-package com.study.exchangeratecalculator.controller;
+package com.study.financialHelper.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

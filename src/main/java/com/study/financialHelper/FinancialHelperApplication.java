@@ -1,13 +1,13 @@
-package com.study.exchangeratecalculator;
+package com.study.financialHelper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ExchangeRateCalculatorApplication {
+public class FinancialHelperApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ExchangeRateCalculatorApplication.class, args);
+        SpringApplication.run(FinancialHelperApplication.class, args);
     }
 
 }

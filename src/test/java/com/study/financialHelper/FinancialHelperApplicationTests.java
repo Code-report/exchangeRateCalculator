@@ -1,10 +1,10 @@
-package com.study.exchangeratecalculator;
+package com.study.financialHelper;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ExchangeRateCalculatorApplicationTests {
+class FinancialHelperApplicationTests {
 
     @Test
     void contextLoads() {

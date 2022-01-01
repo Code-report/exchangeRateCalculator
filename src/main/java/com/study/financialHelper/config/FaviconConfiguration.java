@@ -1,4 +1,4 @@
-package com.study.exchangeratecalculator.config;
+package com.study.financialHelper.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +25,7 @@ public class FaviconConfiguration {
 
     private ResourceHttpRequestHandler faviconRequestHandler() {
         ResourceHttpRequestHandler requestHandler = new ResourceHttpRequestHandler() ;
-        ClassPathResource classPathResource = new ClassPathResource("com/study/exchangeratecalculator");
+        ClassPathResource classPathResource = new ClassPathResource("com/study/financialHelper");
         List<Resource> locations = Arrays.asList(classPathResource);
         requestHandler.setLocations(locations);
         return requestHandler;
