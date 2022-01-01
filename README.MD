@@ -8,3 +8,6 @@
 - Language 설정.
 - 금융 동영상.
 
+### 사용 라이브러리
+- Bootstrap
+- jQuery
